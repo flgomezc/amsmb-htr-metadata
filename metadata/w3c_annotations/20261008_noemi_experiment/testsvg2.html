@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Annotation Overlay — AMSMB_1-3-100.jpg</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; background: #fafafa; color: #222; }
+  h1 { font-size: 1.2rem; }
+  .anno-viewer { position: relative; display: inline-block; max-width: 100%; }
+  .anno-viewer img { display: block; max-width: 100%; height: auto; }
+  /* SVG overlay shares the image's coordinate system */
+  .anno-viewer svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .textline { fill: rgba(0, 0, 255, 0.15); stroke: blue; stroke-width: 4; cursor: pointer; }
+  .baseline { fill: none; stroke: red; stroke-width: 4; cursor: pointer; }
+  .textline:hover { fill: rgba(0, 0, 255, 0.3); }
+  .baseline:hover { stroke-width: 6; }
+  .legend { margin-top: 1rem; font-size: 0.9rem; }
+  .legend span { display: inline-block; width: 2rem; height: 0.6rem; margin-right: 0.4rem; vertical-align: middle; }
+  .legend .swatch-textline { background: rgba(0,0,255,0.3); border: 2px solid blue; }
+  .legend .swatch-baseline { border-top: 3px solid red; height: 0; }
+  details { margin-top: 1rem; }
+  pre { background: #eee; padding: 0.5rem; overflow-x: auto; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+<h1>Medieval charter — annotated text line and baseline</h1>
+
+<p>This experiment was written by Noemi. It is a quick draft and requires deeper review.</p>
+
+<figure class="anno-viewer">
+  <!-- target source of both annotations -->
+  <img id="page" src="../../../data/sample/data/test/AMSMB_1-3-100.jpg"
+       alt="Medieval manuscript charter, first line: Hoc est translatum fideliter factum...">
+  <!-- overlay in the same coordinate system as the PAGE XML (0,0 = top-left of image) -->
+  <svg id="overlay" viewBox="0 0 3000 1500" preserveAspectRatio="xMinYMin meet"
+       xmlns="http://www.w3.org/2000/svg"></svg>
+  <figcaption>The highlighted region is the first text line of the charter
+  (&laquo;Hoc est translatum fideliter factum a quodam instrumento&hellip;&raquo;).</figcaption>
+</figure>
+
+<div class="legend">
+  <span class="swatch-textline"></span> TextLine region (oa:classifying)
+  &nbsp;&nbsp;
+  <span class="swatch-baseline"></span> Baseline (oa:identifying)
+</div>
+
+<!-- The annotations, embedded machine-readably -->
+<script type="application/ld+json" id="annotations">
+[
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "http://example.org/annotations/textline-a557eb4b",
+    "type": "Annotation",
+    "motivation": "classifying",
+    "body": {
+      "type": "SpecificResource",
+      "source": "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd",
+      "selector": { "type": "XPathSelector", "value": "//xs:element[@name='TextLine']" }
+    },
+    "target": {
+      "type": "SpecificResource",
+      "source": "http://example.org/images/AMSMB_1-3-100.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg xmlns='http://www.w3.org/2000/svg'><polygon points='165,156 164,173 362,175 441,160 566,170 771,161 900,183 1103,183 1193,170 1280,182 1322,170 1448,169 1534,182 1604,171 1771,171 1893,193 2122,194 2168,185 2231,193 2376,180 2470,188 2517,183 2598,199 2694,202 2763,189 2889,197 2891,182 2889,134 2626,131 2545,109 2456,123 2398,123 2333,111 2189,125 2084,107 1899,122 1825,107 1699,107 1670,98 1538,118 1466,118 1271,87 1088,84 971,101 858,82 670,79 571,88 517,79 479,84 165,74 165,156'/></svg>"
+      }
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "id": "http://example.org/annotations/baseline-a557eb4b",
+    "type": "Annotation",
+    "motivation": "identifying",
+    "body": {
+      "type": "SpecificResource",
+      "source": "http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd",
+      "selector": { "type": "XPathSelector", "value": "//xs:element[@name='Baseline']" }
+    },
+    "target": {
+      "type": "SpecificResource",
+      "source": "http://example.org/images/AMSMB_1-3-100.jpg",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg xmlns='http://www.w3.org/2000/svg'><polyline points='166,157 724,144 1033,143 2251,164 2651,180 2892,183' stroke='red' stroke-width='1' fill='none'/></svg>"
+      }
+    }
+  }
+]
+</script>
+
+<script>
+  // 1. Sync the SVG viewBox with the image's natural pixel size,
+  //    so the overlay aligns at any display scale.
+  const img = document.getElementById('page');
+  const svg = document.getElementById('overlay');
+  function syncViewBox() {
+    svg.setAttribute('viewBox', `0 0 ${img.naturalWidth} ${img.naturalHeight}`);
+  }
+  img.complete ? syncViewBox() : img.addEventListener('load', syncViewBox);
+
+  // 2. Render each annotation's SvgSelector into the overlay.
+  const annotations = JSON.parse(document.getElementById('annotations').textContent);
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+
+  annotations.forEach(anno => {
+    const doc = new DOMParser()
+      .parseFromString(anno.target.selector.value, 'image/svg+xml');
+    const shape = doc.documentElement.firstElementChild; // <polygon> or <polyline>
+    const node = document.importNode(shape, true);
+
+    // strip inline styling from the selector; style via CSS instead
+    node.removeAttribute('style');
+    node.setAttribute('class',
+      anno.motivation === 'classifying' ? 'textline' : 'baseline');
+
+    // tooltip on hover
+    const title = document.createElementNS(SVG_NS, 'title');
+    title.textContent = `${anno.id}\nmotivation: ${anno.motivation}`;
+    node.appendChild(title);
+
+    svg.appendChild(node);
+  });
+</script>
+
+<footer>
+  © 2025 Mariona Coll Ardanuy, Coral Cuadrada, and Ramon Sarobe. Image and transcriptions are from
+  <a href="https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC">“A Dataset for Handwritten Text Recognition in Medieval Notarial Charters Written on Parchment”</a>
+  (BSC Dataverse, V1), licensed under
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+</footer>
+
+</body>
+</html>

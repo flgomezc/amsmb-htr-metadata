@@ -19,6 +19,19 @@ The layout is modeled on Cookiecutter Data Science:
 
 There is no code yet, so there is no build, lint, or test tooling. Directories with no content yet hold a `.gitkeep`; remove it once the directory has real files.
 
+## HTML files
+
+Every `.html` file in this repository must end with this copyright footer, placed just before `</body>`:
+
+```html
+<footer>
+  © 2025 Mariona Coll Ardanuy, Coral Cuadrada, and Ramon Sarobe. Image and transcriptions are from
+  <a href="https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC">“A Dataset for Handwritten Text Recognition in Medieval Notarial Charters Written on Parchment”</a>
+  (BSC Dataverse, V1), licensed under
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+</footer>
+```
+
 ## Source data: `data/sample/`
 
 This is a 2-document subset of the 100-document AMSMB HTR dataset: medieval notarial charters on parchment, 1208-1499, mainly in Medieval Latin with some Medieval Catalan. The original is on [BSC Dataverse](https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC) under CC BY-SA 4.0. `Datasheet.pdf` documents the full dataset, including transcription conventions and vocabularies.
