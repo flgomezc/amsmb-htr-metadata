@@ -1,0 +1,26 @@
+[
+    {
+        "reference": "AMSMB_1-3-100",
+        "split": "test",
+        "date": 1220,
+        "archive": "AMSMB",
+        "signature": "1-3-100",
+        "hand": "Guillem Ferrer",
+        "type": "Testament",
+        "material": "parchment",
+        "folder": "C5",
+        "summary": "Testament de Guilleuma, muller de Berenguer de Rubí."
+    },
+    {
+        "reference": "AMSMB_1-1-17",
+        "split": "train",
+        "date": 1235,
+        "archive": "AMSMB",
+        "signature": "1-1-7",
+        "hand": "Pere de Bages",
+        "type": "Venda",
+        "material": "parchment",
+        "folder": "C5",
+        "summary": "Bernat Constanci, fill de Ferran Boquer, difunt, amb llicència de la seva mare Maria Constança, ven a Bernat de Santandreu, canonge de Barcelona, i a Ramon, clerguer i rector de les presbiterat instituït pel dit Bernat de Santandreu a l’altar de Sant Nicolau de la Seu de Barcelona, unes cases que té pel mateix presbiterat situades en el burg de Barcelona, en el carrer de Sant Pere. El preu de venda és de 160 sous barcelonesos."
+    }
+]

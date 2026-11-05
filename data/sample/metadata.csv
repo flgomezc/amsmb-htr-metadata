@@ -1,0 +1,101 @@
+reference,split,date,archive,signature,scrivener/notary,type,material,folder
+AMSMB_C1-F1-09,train,1304,AMSMB,C1-F1-09,Pere Pometa,Permuta,parchment,F1
+AMSMB_C1-F1-12,train,1439,AMSMB,C1-F1-12,Arnau d'Illes,Venda,parchment,F1
+AMSMB_C1-F1-17,test,1351,AMSMB,C1-F1-17,Berenguer Mata,Infeudació,parchment,F1
+AMSMB_C1-F1-18,validation,1433,AMSMB,C1-F1-18,Jaume Maimó (àlies Talamanca),Homenatge,parchment,F1
+AMSMB_C1-F1-22,train,1297,AMSMB,C1-F1-22,Jaume de Trilla,Afranquiment,parchment,F1
+AMSMB_C1-F1-24,train,1411,AMSMB,C1-F1-24,Arnau de Lledó,Infeudació,parchment,F1
+AMSMB_C1-F1-29,train,1405,AMSMB,C1-F1-29,Guillem de Lledó,Jurament,parchment,F1
+AMSMB_C1-F1-41,test,1406,AMSMB,C1-F1-41,Jaume Ripoll,Venda,parchment,F1
+AMSMB_C1-F1-43,train,1451,AMSMB,C1-F1-43,s.n.,Venda,parchment,F1
+AMSMB_C1-F1-45,validation,1451,AMSMB,C1-F1-45,s.n.,Confirmació,parchment,F1
+AMSMB_C1-F2-04,validation,1448,AMSMB,C1-F2-04,Jaume Mateu,Establiment,parchment,F2
+AMSMB_C1-F2-06,train,1430,AMSMB,C1-F2-06,s.n.,Venda,parchment,F2
+AMSMB_C1-F2-15,validation,1377,AMSMB,C1-F2-15,Guillem Guerau,Establiment,parchment,F2
+AMSMB_C1-F2-19,test,1441,AMSMB,C1-F2-19,Bernat Julià,Establiment,parchment,F2
+AMSMB_C1-F2-20,validation,1386,AMSMB,C1-F2-20,Guillem Gocet,Donació entre vius,parchment,F2
+AMSMB_C1-F2-21,train,1316,AMSMB,C1-F2-21,Guillem de Vila,Establiment,parchment,F2
+AMSMB_C1-F3-16,train,1499,AMSMB,C1-F3-16,Joan Martínez de Sòria,Venda,parchment,F3
+AMSMB_C1-F3-28,train,1427,AMSMB,C1-F3-28,Pere Tarafa,Àpoca dotal,parchment,F3
+AMSMB_C1-F3-37,train,1312,AMSMB,C1-F3-37,Pere Amorós,Comunitat de béns,parchment,F3
+AMSMB_C1-F3-39,validation,1454,AMSMB,C1-F3-39,Andreu Miquel,Capítols matrimonials,parchment,F3
+AMSMB_C1-F4-05,train,1310,AMSMB,C1-F4-05,s.n.,Donació,parchment,F4
+AMSMB_C2-F2-09,train,1461,AMSMB,C2-F2-09,s.n.,Venda,parchment,F2
+AMSMB_C2-F3-16,test,1307,AMSMB,C2-F3-16,Bernat de Vilarúbia,Dot,parchment,F3
+AMSMB_C2-F3-25,train,1447,AMSMB,C2-F3-25,Pere Figuerola,Jurament,parchment,F3
+AMSMB_C2-F3-32,train,1445,AMSMB,C2-F3-32,Antoni Gomar,Donació,parchment,F3
+AMSMB_C2-F3-39,test,1442,AMSMB,C2-F3-39,Pere Claver,Establiment,parchment,F3
+AMSMB_C2-F3-69,validation,1311,AMSMB,C2-F3-69,Ramon de Cros,Venda,parchment,F3
+AMSMB_C2-F3-71,test,1436,AMSMB,C2-F3-71,Rafael de Bruguera,Venda,parchment,F3
+AMSMB_C2-F3-72,test,1434,AMSMB,C2-F3-72,Gaspar Figuera,Venda,parchment,F3
+AMSMB_C3-F6-04,train,1424,AMSMB,C3-F6-04,Francesc de Casanoves,Absolució,parchment,F6
+AMSMB_1-55-24,train,1403,AMSMB,1-55-24,Berenguer Pedrosell,Donació,parchment,D1
+AMSMB_1-62-07,test,1415,AMSMB,1-62-07,Tomàs Vives,Confirmació,parchment,A1
+AMSMB_1-70-02,test,1380,AMSMB,1-70-02,Antoni Saplana,Venda,parchment,A1
+AMSMB_1-90-08,train,1209,AMSMB,1-90-08,Arnau de Torre,Venda,parchment,C1
+AMSMB_1-90-20,train,1296,AMSMB,1-90-20,Jaume de Malví,Àpoca,parchment,C1
+AMSMB_1-90-23,test,1264,AMSMB,1-90-23,Mateu Llobet,Donació,parchment,C1
+AMSMB_1-90-26,train,1283,AMSMB,1-90-26,Pere Marquès,Establiment,parchment,C1
+AMSMB_1-90-31,train,1254,AMSMB,1-90-31,Jaume de Port,Definició,parchment,C1
+AMSMB_1-90-33,validation,1219,AMSMB,1-90-33,Pere Dorca,Establiment,parchment,C1
+AMSMB_1-90-40,train,1281,AMSMB,1-90-40,Pere Marquès,Establiment,parchment,C1
+AMSMB_1-90-45,test,1259,AMSMB,1-90-45,Pere Marquès,Establiment,parchment,C1
+AMSMB_1-90-46,validation,1277,AMSMB,1-90-46,Miquel de Santiga,Àpoca,parchment,C1
+AMSMB_1-90-48,validation,1261,AMSMB,1-90-48,Pere de Cardona,Sentència arbitral,parchment,C1
+AMSMB_1-90-50,validation,1293,AMSMB,1-90-50,Pere Ribalta,Venda,parchment,C1
+AMSMB_1-92-02,test,1327,AMSMB,1-92-02,Pere de Torre,Establiment,parchment,C1
+AMSMB_1-92-27,train,1316,AMSMB,1-92-27,Berenguer de Vallseca,Establiment,parchment,C1
+AMSMB_37-11-14,train,1473,AMSMB,37-11-14,s.n.,Establiment,parchment,A4
+AMSMB_C1-F2-03,train,1333,AMSMB,C1-F2-03,Berenguer Simó,Establiment,parchment,F2
+AMSMB_C1-F2-10,train,1276,AMSMB,C1-F2-10,Pere de Roca,Establiment,parchment,F2
+AMSMB_C1-F2-22,test,1321,AMSMB,C1-F2-22,Jaume Net,Establiment,parchment,F2
+AMSMB_C1-F2-24,test,1227,AMSMB,C1-F2-24,"Esteve, prevere",Establiment,parchment,F2
+AMSMB_C1-F2-25,train,1295,AMSMB,C1-F2-25,"Pere de Noguera, prevere",Establiment,parchment,F2
+AMSMB_C1-F2-26,train,1326,AMSMB,C1-F2-26,Bartomeu Marc,Venda,parchment,F2
+AMSMB_C1-F4-06,train,1238,AMSMB,C1-F4-06,Berenguer Jaume,Dot,parchment,F4
+AMSMB_C1-F4-09,train,1246,AMSMB,C1-F4-09,Guillem de Moneca,Donació,parchment,F4
+AMSMB_C2-F3-57,validation,1284,AMSMB,C2-F3-57,s.n.,Venda,parchment,F3
+AMSMB_C2-F3-58,test,1318,AMSMB,C2-F3-58,Ramon d'Avinyó,Absolució,parchment,F3
+AMSMB_C2-F3-62,validation,1317,AMSMB,C2-F3-62,Bernat de Pont,Sentència,parchment,F3
+AMSMB_C2-F3-73,train,1274,AMSMB,C2-F3-73,s.n.,Venda,parchment,F3
+AMSMB_C2-F3-81,train,1323,AMSMB,C2-F3-81,Guillem Coscoll,Venda,parchment,F3
+AMSMB_C2-F3-85,train,1274,AMSMB,C2-F3-85,Pere Marquès,Establiment,parchment,F3
+AMSMB_C2-F3-86,train,1235,AMSMB,C2-F3-86,Pere de Bages,Venda,parchment,F3
+AMSMB_1-1-17,train,1235,AMSMB,1-1-7,Pere de Bages,Venda,parchment,C5
+AMSMB_1-10-16,train,1240,AMSMB,1-10-16,Pere de Bages,Àpoca dotal,parchment,C3
+AMSMB_1-13-13,train,1295,AMSMB,1-13-13,Pere Marc,Inventari,parchment,D3
+AMSMB_1-15-27,train,1326,AMSMB,1-15-27,Bernat de Vilarúbia,Definició,parchment,C7
+AMSMB_1-19-06,train,1300,AMSMB,1-19-06,Bonanat d'Esparreguera,Testament,parchment,B7
+AMSMB_1-20-04,train,1305,AMSMB,1-20-04,Bernat de Vilarúbia,Venda,parchment,B13
+AMSMB_1-3-100,test,1220,AMSMB,1-3-100,Guillem Ferrer,Testament,parchment,C5
+AMSMB_1-4-35,train,1320,AMSMB,1-4-35,Francesc de Torre,Clàusula testamentària,parchment,C4
+AMSMB_1-42-32,train,1265,AMSMB,1-42-32,Pere Marc,Promesa,parchment,C3
+AMSMB_1-44-45,train,1255,AMSMB,1-44-45,Pere de Terme,Concòrdia,parchment,C4
+AMSMB_1-48-04,train,1437,AMSMB,1-48-04,Pere Ponçgem,Reconeixement,parchment,C4
+AMSMB_1-62-39,validation,1454,AMSMB,1-62-39,Guillem Jordà,Establiment,parchment,A1
+AMSMB_1-70-13,train,1355,AMSMB,1-70-13,Pere Borrell,Venda,parchment,A1
+AMSMB_1-70-42,validation,1476,AMSMB,1-70-42,Francesc Nicolau de Moles,Reducció de cens,parchment,A1
+AMSMB_1-70-49,train,1354,AMSMB,1-70-49,Bernat de Torre,Venda,parchment,A1
+AMSMB_1-73-45,train,1440,AMSMB,1-73-45,Pere Pau Pujades,Venda,parchment,B4
+AMSMB_1-78-49,train,1435,AMSMB,1-78-49,Pere Soler,Venda,parchment,B5
+AMSMB_1-80-19,train,1423,AMSMB,1-80-19,Joan Franc,Venda,parchment,A11
+AMSMB_1-90-06,test,1261,AMSMB,1-90-06,Pere de Cardona,Concòrdia,parchment,C1
+AMSMB_11-1-14,train,1330,AMSMB,11-1-14,Arnau [Delpàs],Poders,parchment,D1
+AMSMB_13-5-08,train,1232,AMSMB,13-5-08,Berenguer de Clos,Donació,parchment,A10
+AMSMB_2-5-19,train,1250,AMSMB,2-5-19,Pere Marquès,Reconeixement,parchment,A14
+AMSMB_20-1-01,train,1290,AMSMB,20-1-01,Miquel Rotllan,Venda,parchment,B11
+AMSMB_22-1-24,validation,1285,AMSMB,22-1-24,Ramon Alcem,Venda,parchment,B14
+AMSMB_23-1-07,train,1301,AMSMB,23-1-07,Berenguer de Terrassa,Donació,parchment,D4
+AMSMB_28-8-06,train,1275,AMSMB,28-8-06,Salvador de Baiona,Venda,parchment,B7
+AMSMB_7-4-31,test,1255,AMSMB,7-4-31,"Joan, sacerdot de Sarral",Homenatge,parchment,E4
+AMSMB_7-5-18,train,1226,AMSMB,7-5-18,Ramon d'Om,Venda,parchment,A7
+AMSMB_7-7-34,test,1208,AMSMB,7-7-34,Berenguer levita,Establiment,parchment,D4
+AMSMB_C1-F14-55,validation,1215,AMSMB,C1-F14-55,Berenguer prevere,Esponsalici,parchment,F14
+AMSMB_C3-F7-32,train,1280,AMSMB,C3-F7-32,Pere Marc,Definició,parchment,F7
+AMSMB_C3-F7-34,validation,1271,AMSMB,C3-F7-34,Pere Marc,Testament,parchment,F7
+AMSMB_1-92-38,validation,1349,AMSMB,1-92-38,Jaume d'Argelaguer,Venda,parchment,C1
+AMSMB_27-1-07,train,1362,AMSMB,27-1-07,Berenguer Vergós,Testament,parchment,B12
+AMSMB_C1-D6-01,test,1313,AMSMB,C1-D6-01,Jaume d'Avinyó,Testament,parchment,D6
+AMSMB_C2-F4-61,validation,1499,AMSMB,C2-F4-61,Pere Sabater,Donació,parchment,F4
+AMSMB_C3-F14-20,train,1374,AMSMB,C3-F14-20,Ramon Camat,Confirmació,parchment,F14
+AMSMB_C4-F14-37,train,1486,AMSMB,C4-F14-37,Bartomeu Masons,Institució d'aniversari,parchment,F14

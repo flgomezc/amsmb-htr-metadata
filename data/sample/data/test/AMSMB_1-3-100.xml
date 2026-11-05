@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"  standalone="yes"?>
+<PcGts xmlns="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15 http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd">
+  <Metadata>
+	<Creator>escriptorium</Creator>
+	<Created>2025-02-06T08:26:19.764258+00:00</Created>
+        <LastChange>2025-02-17T16:22:15.778430+00:00</LastChange>
+  </Metadata>
+  <Page imageFilename="AMSMB_1-3-100.jpg" imageWidth="3042" imageHeight="1517">
+    <TextRegion id="eSc_textblock_1aa9423e"  custom="structure {type:MainZone;}">
+      <Coords points="2978,1416 3014,1055 3006,843 2978,80 1255,80 88,80 100,828 105,1133 110,1471 757,1459 903,1456 1444,1446 1472,1445"/>
+      <TextLine id="eSc_line_a557eb4b" custom="structure {type:DefaultLine;}">
+        <Coords points="165,156 164,173 362,175 441,160 566,170 771,161 900,183 1103,183 1193,170 1280,182 1322,170 1448,169 1534,182 1604,171 1771,171 1893,193 2122,194 2168,185 2231,193 2376,180 2470,188 2517,183 2598,199 2694,202 2763,189 2889,197 2891,182 2889,134 2626,131 2545,109 2456,123 2398,123 2333,111 2189,125 2084,107 1899,122 1825,107 1699,107 1670,98 1538,118 1466,118 1271,87 1088,84 971,101 858,82 670,79 571,88 517,79 479,84 165,74 165,156"/>
+        <Baseline points="166,157 724,144 1033,143 2251,164 2651,180 2892,183"/>
+        <TextEquiv>
+          <Unicode>Hoc est translatum fideliter factum a quodam instrumento cuius series sic se habet: In Dei nomine. Ego Guillelma, uxor Berengarii de Rubi, grave egritudine detenta, habens tamen plenum</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_ea848848" custom="structure {type:DefaultLine;}">
+        <Coords points="97,231 192,230 449,237 520,239 521,239 531,238 587,232 813,233 879,239 879,239 944,236 1012,244 1039,247 1040,247 1083,246 1190,240 1278,248 1330,252 1331,252 1386,249 1510,241 1581,251 1582,251 1700,244 1960,257 1985,257 1986,257 1991,257 2015,253 2143,259 2156,259 2156,259 2167,259 2334,255 2483,263 2518,265 2909,268 2911,262 2909,219 2445,216 2434,214 2398,208 2398,208 2267,210 2239,205 2238,205 2172,211 2168,211 2165,211 2080,199 2079,199 1964,209 1948,210 1933,209 1826,197 1825,197 1718,207 1713,208 1634,208 1624,206 1540,195 1539,195 1470,196 1427,190 1427,190 1165,191 1132,187 654,182 653,182 506,195 503,195 269,193 268,192 232,187 231,187 100,192 98,224 97,231"/>
+        <Baseline points="98,224 819,215 1210,218 1729,235 1902,244 2333,246 2911,262"/>
+        <TextEquiv>
+          <Unicode>sensum et memoriam integram, facio meum testamentum, in quo eligo manumissores meos Bovem de Tursa et Martinum de Montecathano et dictum maritum meum Berengarium de</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_8f1ce6ce" custom="structure {type:DefaultLine;}">
+        <Coords points="110,305 109,321 159,321 176,323 192,326 193,326 225,324 300,318 332,322 332,322 548,304 1341,305 1435,313 1436,313 1523,309 1645,316 1646,316 1743,316 1832,324 2042,327 2145,337 2146,337 2243,329 2313,337 2314,337 2407,332 2509,341 2523,342 2911,343 2913,327 2912,289 2669,289 2663,287 2636,282 2477,282 2430,276 2430,276 2357,284 2355,285 2197,285 2178,283 1982,266 1981,266 1800,277 1604,260 992,257 991,257 725,267 655,259 654,259 536,270 491,273 268,268 267,268 174,272 110,267 110,305"/>
+        <Baseline points="110,305 789,291 946,291 1678,302 2138,317 2424,318 2913,327"/>
+        <TextEquiv>
+          <Unicode>Rubi, quibus rogando precipio quod si me mori contigerit antequam aliud testamentum faciam ipsi distribuant omnia bona mea sicut hic invenerint ordinatum. In primis accipio pro</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_85cc23c3" custom="structure {type:DefaultLine;}">
+        <Coords points="2930,369 2929,369 2666,368 2655,366 2534,357 2533,357 2462,364 2397,363 2302,353 2301,353 2198,362 2188,363 2000,362 1991,360 1939,353 1938,353 1849,355 1693,338 852,332 851,332 775,340 473,347 436,347 413,346 351,343 350,343 300,345 270,346 243,344 176,339 175,339 109,343 107,385 107,392 294,394 295,394 297,394 545,380 658,388 659,388 735,379 786,381 787,381 834,377 1651,384 1716,396 1717,396 1787,393 1920,400 1920,400 1978,396 2137,407 2138,407 2166,403 2204,409 2213,411 2214,411 2246,410 2355,406 2433,412 2463,413 2719,415 2720,415 2732,414 2775,408 2816,414 2822,415 2823,416 2941,416 2942,404 2931,370 2930,369"/>
+        <Baseline points="107,385 300,376 623,371 765,365 1310,367 1768,377 1907,387 2541,393 2942,404"/>
+        <TextEquiv>
+          <Unicode>anima mea XX solidos, de quibus dimitto ecclesie Sancte Marie de Mari cum corpore meo ibi sepeliendo III solidos. Residuum vero dictorum XX solidorum dicti manumissores dividant pro ut me-</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_31531561" custom="structure {type:DefaultLine;}">
+        <Coords points="107,460 106,467 304,469 305,469 305,469 407,458 547,463 547,463 681,451 729,455 729,455 818,451 1003,452 1055,460 1056,460 1098,454 1418,455 1479,467 1480,467 1555,459 1642,460 1689,468 1690,468 1782,461 1834,468 2062,478 2063,478 2243,474 2352,485 2360,485 2360,485 2368,485 2495,475 2569,487 2575,487 2901,488 2902,477 2902,440 2813,440 2807,439 2678,421 2561,420 2560,420 2417,429 2323,423 2323,423 2239,433 2124,422 2123,422 2035,433 2024,434 2002,432 1890,424 1889,424 1843,431 1834,432 1774,431 1772,430 1708,419 1707,419 1582,422 1475,412 1201,410 1200,410 1051,416 995,408 804,407 804,407 752,416 654,421 632,422 611,421 557,417 556,417 528,420 509,422 107,417 107,460"/>
+        <Baseline points="107,460 445,446 1052,438 1651,448 2273,467 2656,468 2902,477"/>
+        <TextEquiv>
+          <Unicode>lius cognoverint ese ad utilitatem anime mee. Omnia alia bona mea, mobilia et immobilia et se movencia, que ratione hereditatis mee vel ratione sponsalicii mei vel aliis quibuslibet modis</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_f63ea23a" custom="structure {type:DefaultLine;}">
+        <Coords points="107,543 506,546 507,546 510,546 544,541 625,546 636,546 637,546 641,546 744,531 790,531 934,537 935,537 1046,533 1502,535 1576,545 1577,545 1692,536 1785,545 1786,545 1845,541 1939,549 1940,549 2102,546 2178,554 2180,554 2181,554 2184,554 2228,551 2360,555 2366,555 2367,555 2368,555 2437,546 2520,547 2584,557 2590,557 2897,557 2898,546 2897,512 2581,511 2577,510 2479,493 2404,487 2403,487 2306,487 2169,508 2167,509 2092,509 1955,507 1935,507 1767,494 1766,494 1660,503 1493,482 1116,479 1115,479 949,492 879,483 878,483 679,493 544,477 483,477 482,477 236,498 108,498 108,537"/>
+        <Baseline points="108,537 460,524 1017,515 1471,519 2143,538 2432,538 2662,545 2898,546"/>
+        <TextEquiv>
+          <Unicode>ego habeo vel habere debeo aliqua parte dimito Berengario et Bernardo, filiis meis, et dicti Berengarii de Rubi equis portionibus inter eos dividendo. Ita tamen quod quisquis ex ipsis</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_8955fd88" custom="structure {type:DefaultLine;}">
+        <Coords points="102,611 103,616 406,621 407,621 416,620 463,615 531,621 547,622 548,622 558,621 643,611 755,615 756,615 789,611 914,625 939,627 940,627 958,625 1011,618 1052,621 1053,621 1129,610 1364,613 1435,625 1436,625 1534,621 1633,628 1634,628 1903,620 2087,631 2087,631 2158,626 2205,634 2205,634 2318,630 2369,639 2371,639 2371,639 2376,639 2521,627 2621,635 2622,635 2677,632 2798,643 2810,644 2811,645 2923,645 2924,631 2923,593 2571,596 2529,591 2528,591 2452,596 2392,595 2353,587 2252,570 2251,570 1964,571 1894,566 1893,566 1860,571 1461,560 1460,560 1352,572 1235,569 1234,569 1196,573 1009,556 1008,556 896,559 770,554 769,554 575,572 557,573 102,568 102,611"/>
+        <Baseline points="102,611 890,597 1202,597 2924,631"/>
+        <TextEquiv>
+          <Unicode>Berengario et Bernardo, fratribus, primus decesserit sine legitima prole, hereditas eius revertatur aliis superviventi ad suam voluntatem libere faciendam, salvo censu et seniora-</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_5c056ec5" custom="structure {type:DefaultLine;}">
+        <Coords points="111,691 112,706 343,698 460,684 643,691 643,691 845,686 925,692 926,692 973,686 1325,686 1495,692 1496,692 1538,688 1630,690 1687,696 1688,696 1740,693 1885,702 1886,702 1918,698 2026,713 2031,713 2032,714 2159,714 2159,713 2162,713 2243,706 2390,714 2408,715 2827,716 2827,716 2832,716 2883,712 2929,716 2931,705 2930,669 2681,669 2667,668 2526,659 2525,659 2414,662 2357,655 2356,655 2160,666 2150,666 2143,666 2084,660 2083,660 1924,665 1910,665 1903,665 1816,659 1815,659 1744,664 1539,653 1538,653 1496,656 1411,651 1101,650 1100,650 979,656 922,651 922,651 829,655 758,648 519,648 472,648 471,648 400,658 330,651 329,651 111,659 111,691"/>
+        <Baseline points="111,691 510,677 1325,674 1715,686 2387,695 2640,703 2931,705"/>
+        <TextEquiv>
+          <Unicode>tico seniorum in quanto per eos tenetur. Rogo ad huc dictum maritum meum Berengarium de Rubi ut det matri mee Raimunde guarnaxiam meam d’estamfort, et quod sit menor anime</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_c807c26a" custom="structure {type:DefaultLine;}">
+        <Coords points="113,776 112,778 158,785 451,771 515,779 560,772 730,772 768,779 871,772 936,786 1002,773 1261,782 1309,773 1593,773 1738,793 1775,788 1842,802 1986,802 2038,792 2098,801 2250,785 2339,802 2907,804 2910,783 2909,739 2518,739 2400,725 2335,734 2289,724 2213,737 1995,724 1943,737 1725,737 1599,731 1505,709 1292,719 1231,706 517,704 305,728 182,715 113,718 113,776"/>
+        <Baseline points="114,777 627,757 1150,755 1650,770 2413,777 2911,784"/>
+        <TextEquiv>
+          <Unicode>mee. Actum est hoc nono kalendas madii, anno Domini Mº CCº XXº. Sig+num Guillelme, uxoris Berengarii de Rubi, que hoc testamentum facio et firmo firmarique rogo.</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_732da034" custom="structure {type:DefaultLine;}">
+        <Coords points="113,858 112,862 185,867 284,854 328,860 460,853 592,871 635,864 680,872 847,849 1531,852 1632,871 1918,871 2035,860 2174,881 2470,881 2498,873 2620,882 2963,883 2966,865 2962,807 2934,810 2834,795 2743,810 2610,810 2545,795 2457,809 2178,809 2111,792 2040,800 1982,792 1639,805 1521,787 1333,787 1263,801 1111,802 1054,792 987,798 878,793 842,783 630,788 541,782 443,791 324,783 257,797 113,797 113,858"/>
+        <Baseline points="114,859 559,837 1075,837 1689,849 2345,866 2967,866"/>
+        <TextEquiv>
+          <Unicode>Sig+num Bovis de Tursa, Sig+num Martini de Montecathano, Sig+num Berengarii de Rubi, qui hoc laudamus et firmamus. Sig+num Bernardi Blanche,</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_db2ff564" >
+        <Coords points="128,927 128,946 158,955 202,949 226,960 254,950 262,959 269,959 280,950 298,955 313,943 404,943 443,962 474,954 480,960 561,959 608,943 608,920 601,884 594,891 525,884 490,892 448,877 418,881 403,893 361,888 351,895 287,879 218,881 203,897 182,897 169,883 163,883 144,895 127,892 128,927"/>
+        <Baseline points="129,929 609,921"/>
+        <TextEquiv>
+          <Unicode>de Molendinis Domini Regis.</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_0d34eb26" >
+        <Coords points="763,917 762,941 831,938 849,955 871,956 888,941 914,950 933,938 979,944 1083,938 1106,956 1135,962 1146,950 1150,954 1155,954 1202,940 1239,964 1316,964 1338,949 1357,964 1443,964 1491,939 1527,943 1529,920 1528,892 1472,892 1465,883 1445,888 1384,873 1379,873 1360,888 1322,892 1148,892 1108,878 1059,883 1040,871 984,871 960,884 946,871 873,878 855,871 763,869 763,917"/>
+        <Baseline points="764,918 1531,921"/>
+        <TextEquiv>
+          <Unicode>num Bartholomei de Ausona, testium. Signum</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_af70f447" >
+        <Coords points="1677,924 1676,959 1748,970 1854,954 1930,963 1964,953 2003,959 2046,954 2105,977 2146,977 2196,960 2232,977 2307,978 2332,964 2390,959 2421,967 2437,962 2486,980 2546,983 2610,983 2689,963 2792,963 2825,978 2862,965 2929,965 2930,940 2929,896 2801,895 2738,915 2648,915 2620,906 2586,912 2502,891 2440,897 2423,889 2340,889 2307,900 2266,895 2216,907 2174,900 2159,907 2014,903 1953,883 1925,889 1895,884 1864,895 1824,882 1785,902 1677,888 1677,924"/>
+        <Baseline points="1678,925 2931,941"/>
+        <TextEquiv>
+          <Unicode>Raimundi de Ulmo, notarii, qui hoc scripsit cum litteris suprapositis in linea Iª, ubi</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_996e0491" >
+        <Coords points="137,1001 136,1029 199,1017 232,1034 255,1034 271,1018 290,1026 326,1018 448,1018 470,1032 507,1021 546,1027 556,1020 598,1020 616,1036 745,1037 775,1023 806,1036 861,1026 883,1037 905,1036 906,980 861,969 848,982 826,982 797,967 792,967 776,980 720,980 695,963 657,969 610,963 589,979 523,963 518,963 501,978 461,970 423,978 412,969 329,960 271,960 245,977 137,975 137,1001"/>
+        <Baseline points="138,1002 907,1007"/>
+        <TextEquiv>
+          <Unicode>notatur &quot;Guillelma&quot;, die et anno prefixis. Sig</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_111a5c21" >
+        <Coords points="1019,1006 1017,1025 1038,1034 1126,1030 1187,1049 1260,1035 1274,1046 1350,1036 1440,1039 1460,1059 1466,1059 1476,1051 1491,1063 1539,1064 1556,1047 1590,1065 1617,1059 1639,1068 1753,1070 1762,1064 1772,1072 1777,1072 1806,1063 1808,1030 1805,988 1772,999 1727,999 1710,988 1704,988 1692,997 1603,996 1594,986 1519,992 1467,968 1442,968 1413,987 1385,973 1345,974 1332,964 1268,962 1226,982 1196,978 1177,959 1102,956 1039,956 1019,967 1019,1006"/>
+        <Baseline points="1020,1007 1809,1031"/>
+        <TextEquiv>
+          <Unicode>num Berengarii de Canali, presbiteri. Signum</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_36e64efa" >
+        <Coords points="1912,1026 1911,1049 1957,1046 1998,1060 2021,1053 2054,1074 2151,1078 2186,1078 2210,1060 2247,1053 2307,1060 2327,1054 2328,1035 2328,1017 2242,1017 2188,1002 2183,1002 2167,1016 2098,1013 2069,987 1966,984 1962,984 1936,1007 1912,1005 1912,1026"/>
+        <Baseline points="1914,1027 2329,1036"/>
+        <TextEquiv>
+          <Unicode>Vitalis presbiteri. Signum</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_e51f70c2" >
+        <Coords points="2457,1042 2457,1069 2489,1061 2560,1074 2608,1074 2642,1063 2761,1064 2787,1078 2839,1068 2906,1072 2916,1082 2920,1082 2964,1073 2966,1055 2963,1010 2948,1015 2921,1005 2916,1005 2907,1012 2843,1002 2803,1010 2772,994 2710,993 2693,1008 2671,1008 2619,991 2569,1006 2457,1002 2457,1042"/>
+        <Baseline points="2459,1043 2967,1056"/>
+        <TextEquiv>
+          <Unicode>Deusde de Columbario, notarii.</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_ec02abeb" >
+        <Coords points="123,1118 122,1132 169,1127 226,1137 281,1130 399,1135 475,1125 534,1132 637,1126 657,1133 715,1130 759,1146 905,1147 958,1128 988,1137 1019,1128 1083,1130 1110,1141 1184,1130 1261,1130 1376,1142 1416,1136 1462,1150 1502,1149 1537,1133 1629,1133 1677,1144 1738,1140 1791,1156 1929,1156 1930,1132 1929,1102 1890,1092 1849,1101 1813,1090 1524,1088 1403,1113 946,1111 906,1096 811,1107 769,1097 738,1106 552,1097 467,1107 422,1101 289,1106 169,1078 123,1077 123,1118"/>
+        <Baseline points="125,1119 1931,1133"/>
+        <TextEquiv>
+          <Unicode>Sig+num Romei de Sancto Cucuphate, acoliti, notarii. Sig+num Arnaldo de Ponte. Sig+num Petri de Deo. Sig</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_604173a0" >
+        <Coords points="2062,1130 2062,1160 2247,1156 2290,1180 2447,1180 2502,1159 2595,1181 2669,1181 2709,1161 2765,1181 2809,1160 2897,1160 2938,1181 2942,1135 2940,1096 2897,1104 2873,1099 2847,1112 2785,1104 2775,1114 2730,1114 2704,1098 2653,1107 2622,1098 2599,1112 2440,1112 2400,1093 2328,1099 2282,1092 2177,1092 2154,1109 2062,1108 2062,1130"/>
+        <Baseline points="2063,1131 2943,1136"/>
+        <TextEquiv>
+          <Unicode>num Guillelmi Ferrarii, nos septem huius trans-</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_40de0a64" >
+        <Coords points="155,1193 155,1217 206,1211 242,1233 338,1230 369,1207 395,1212 427,1199 477,1199 500,1218 533,1204 576,1211 577,1175 572,1142 551,1149 523,1133 480,1154 366,1156 340,1141 335,1141 300,1157 247,1146 232,1161 211,1147 152,1147 155,1193"/>
+        <Baseline points="156,1194 579,1176"/>
+        <TextEquiv>
+          <Unicode>lati testes sumus. Sig</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_c5056672" >
+        <Coords points="729,1171 728,1202 744,1212 810,1199 857,1209 882,1192 972,1192 1008,1195 1038,1211 1155,1218 1232,1212 1258,1199 1311,1207 1322,1198 1378,1206 1393,1217 1398,1217 1447,1200 1500,1224 1546,1224 1604,1203 1668,1203 1670,1185 1667,1155 1623,1159 1574,1151 1543,1157 1531,1147 1524,1147 1513,1157 1431,1157 1400,1141 1354,1155 1323,1136 1279,1155 1213,1154 1188,1135 1144,1133 1113,1146 1096,1133 986,1131 917,1131 876,1147 847,1135 791,1146 729,1142 729,1171"/>
+        <Baseline points="730,1172 1671,1187"/>
+        <TextEquiv>
+          <Unicode>num Raimundi de Ulmo, subdiachoni et notarii, qui hoc confirmo.</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_8db68d43" >
+        <Coords points="152,1317 149,1357 221,1356 225,1322 226,1280 154,1280 152,1317"/>
+        <Baseline points="154,1318 226,1323"/>
+        <TextEquiv>
+          <Unicode>Sig</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_762eadd8" >
+        <Coords points="350,1313 352,1332 531,1327 594,1341 729,1340 762,1332 981,1338 1038,1329 1103,1337 1311,1336 1360,1321 1470,1319 1514,1327 1615,1319 1694,1328 1792,1317 2030,1318 2074,1328 2206,1319 2270,1328 2378,1313 2459,1318 2497,1310 2825,1309 2910,1322 2914,1293 2911,1251 2771,1237 2667,1257 2565,1257 2437,1240 2350,1257 2279,1246 2232,1254 2177,1242 1953,1238 1649,1241 1526,1266 1465,1267 1279,1267 1204,1252 1068,1269 974,1269 862,1247 730,1273 624,1273 512,1254 380,1273 348,1269 350,1313"/>
+        <Baseline points="351,1314 2915,1294"/>
+        <TextEquiv>
+          <Unicode>num Guillelmi Ferrarii, qui hoc translatum scripsit mandato Raimundi de Ulmo, subdiachoni et notarii publici Barchinone, cum litteris emendatis in</Unicode>
+        </TextEquiv>
+      </TextLine>
+      <TextLine id="eSc_line_875267c6" custom="structure {type:DefaultLine;}">
+        <Coords points="173,1420 173,1467 499,1465 579,1453 734,1462 840,1413 979,1413 1015,1422 1038,1410 1201,1410 1254,1428 1338,1422 1390,1431 1416,1423 1512,1425 1551,1415 1609,1429 1681,1410 1713,1418 1759,1408 1789,1417 1792,1405 1791,1355 1740,1353 1695,1336 1644,1356 1437,1356 1356,1333 1260,1357 1194,1341 1153,1353 1089,1331 576,1334 543,1350 493,1341 432,1364 171,1362 173,1420"/>
+        <Baseline points="174,1421 520,1396 944,1389 1317,1404 1793,1406"/>
+        <TextEquiv>
+          <Unicode>linea IIIª et IIIIª, in duobus locis, Vº kalendas madii, anno Domini millesimo CCº XXXº tercio.</Unicode>
+        </TextEquiv>
+      </TextLine>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_becbbe6b"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="594,1120 594,1246 715,1246 715,1120"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_88c604a9"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="229,1258 229,1355 338,1355 338,1258"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_ae900d9e"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="918,941 918,1060 1013,1060 1013,941"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_d2915c6c"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="631,874 631,961 749,961 749,874"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_9efc09ad"  >
+      <Coords points="53,65 53,203 160,203 160,65"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_bb35da99"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="1821,966 1821,1104 1908,1104 1908,966"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_281cf137"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="1945,1058 1945,1176 2053,1176 2053,1058"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_c5d88c4e"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="2339,956 2339,1108 2448,1108 2448,956"/>
+    </TextRegion>
+    <TextRegion id="eSc_textblock_6b8349df"  custom="structure {type:GraphicZone:Signum;}">
+      <Coords points="1548,864 1548,968 1671,968 1671,866"/>
+    </TextRegion>
+  </Page>
+</PcGts>
