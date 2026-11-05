@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Minimal PageXML to W3C</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 1rem; }
+  #view { position: relative; display: inline-block; max-width: 100%; }
+  #view img { display: block; max-width: 100%; }
+  #view svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .line { fill: rgba(0, 0, 255, 0.15); stroke: blue; stroke-width: 2; vector-effect: non-scaling-stroke; }
+  .zone { fill: none; stroke: green; stroke-width: 2; stroke-dasharray: 6 4; vector-effect: non-scaling-stroke; }
+  pre { background: #eee; padding: 0.5rem; overflow: auto; max-height: 30rem; }
+</style>
+</head>
+<body>
+<h1>PageXML → W3C Web Annotations</h1>
+<p>Minimal version of pagexml-viewer.html, written 2026-11-05: same mapping, nothing embedded.
+Choose a charter's JPEG and its PageXML together. The shapes are drawn from the W3C JSON-LD below.</p>
+<h2>Output structure</h2>
+<pre>
+AnnotationPage            id: …#AnnotationPage_&lt;charter&gt;
+└─ items
+   ├─ Annotation (zone)   motivation: classifying
+   │   ├─ body:   tag (SegmOnto type) + link to the TextRegion in the PageXML
+   │   └─ target: image + polygon (SvgSelector) + bounding box (FragmentSelector)
+   └─ Annotation (line)   motivation: describing, creator, generator
+       ├─ body:   transcription + tag (SegmOnto type, if any) + link to the TextLine in the PageXML
+       └─ target: image + polygon (SvgSelector) + bounding box (FragmentSelector)
+</pre>
+<p>Every target is the image, with the shape as an SvgSelector polygon and its bounding box as a FragmentSelector.</p>
+<h2>Known issues</h2>
+<ul>
+  <li>No baselines: they stay in the PageXML, behind the linking XPath.</li>
+  <li>Untyped regions are skipped, as with eSc_textblock_9efc09ad.</li>
+  <li>SVG selectors have no xmlns.</li>
+  <li>width and height are dropped in JSON-LD processing.</li>
+  <li>Links are file names, not Dataverse URLs.</li>
+</ul>
+<input type="file" id="files" accept=".jpg,.jpeg,.xml" multiple>
+<div id="view"></div>
+<pre id="out"></pre>
+
+<script>
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const NS = 'https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC#';
+const TRANSCRIBER = 'https://orcid.org/0000-0003-2099-3567';
+
+// 1. Read the PageXML
+const kids = (el, name) => [...el.children].filter(c => c.localName === name);
+const points = el => {
+  const s = kids(el, 'Coords')[0]?.getAttribute('points');
+  return s ? s.trim().split(/\s+/).map(p => p.split(',').map(v => Math.round(+v))) : [];
+};
+const segType = el => /structure\s*\{[^}]*type:([^;}]+)/.exec(el.getAttribute('custom') || '')?.[1].trim() || null;
+
+function parsePage(text) {
+  const page = new DOMParser().parseFromString(text, 'application/xml').getElementsByTagNameNS('*', 'Page')[0];
+  if (!page) throw new Error('No <Page> element: is this a PageXML file?');
+  return {
+    image: page.getAttribute('imageFilename'),
+    width: +page.getAttribute('imageWidth'),
+    height: +page.getAttribute('imageHeight'),
+    regions: [...page.getElementsByTagNameNS('*', 'TextRegion')].map(r => ({
+      id: r.getAttribute('id'), type: segType(r), pts: points(r),
+      lines: kids(r, 'TextLine').map(l => {
+        const unicode = kids(l, 'TextEquiv')[0] && kids(kids(l, 'TextEquiv')[0], 'Unicode')[0];
+        return { id: l.getAttribute('id'), type: segType(l), pts: points(l), text: unicode ? unicode.textContent : '' };
+      }),
+    })),
+  };
+}
+
+// 2. Convert to W3C
+function toW3C(page, stem, xmlName) {
+  const source = { id: page.image, type: 'Image', format: 'image/jpeg', width: page.width, height: page.height };
+  const selectors = pts => {
+    const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]), x = Math.min(...xs), y = Math.min(...ys);
+    return [
+      { type: 'SvgSelector', value: `<svg><polygon points="${pts.map(p => p.join(',')).join(' ')}" /></svg>` },
+      { type: 'FragmentSelector', conformsTo: 'http://www.w3.org/TR/media-frags/', value: `xywh=pixel:${x},${y},${Math.max(...xs) - x},${Math.max(...ys) - y}` },
+    ];
+  };
+  const tag = value => ({ type: 'TextualBody', purpose: 'tagging', value });
+  const link = (element, id) => ({
+    type: 'SpecificResource', purpose: 'linking',
+    source: { id: xmlName, format: 'application/xml' },
+    selector: { type: 'XPathSelector', value: `//*[local-name()='${element}'][@id='${id}']` },
+  });
+  const base = `${NS}anno_${stem}_`, items = [];
+  for (const r of page.regions) {
+    if (r.pts.length >= 3 && r.type) {
+      items.push({ id: base + r.id, type: 'Annotation', motivation: 'classifying',
+        body: [tag(r.type), link('TextRegion', r.id)], target: { source, selector: selectors(r.pts) } });
+    }
+    for (const l of r.lines) {
+      if (l.pts.length < 3) continue;
+      const body = [{ type: 'TextualBody', value: l.text, format: 'text/plain' }];
+      if (l.type) body.push(tag(l.type));
+      body.push(link('TextLine', l.id));
+      items.push({ id: base + l.id, type: 'Annotation', motivation: 'describing', creator: TRANSCRIBER,
+        generator: NS + 'tool_eScriptorium', body, target: { source, selector: selectors(l.pts) } });
+    }
+  }
+  return { '@context': 'http://www.w3.org/ns/anno.jsonld', id: `${NS}AnnotationPage_${stem}`, type: 'AnnotationPage', items };
+}
+
+// 3. Draw each annotation's SvgSelector over the image
+function draw(jpg, page, annotations) {
+  const img = new Image();
+  img.src = URL.createObjectURL(jpg);
+  const svg = document.createElementNS(SVG_NS, 'svg');
+  svg.setAttribute('viewBox', `0 0 ${page.width} ${page.height}`);
+  svg.setAttribute('preserveAspectRatio', 'none');
+  for (const a of annotations.items) {
+    const shape = document.createElementNS(SVG_NS, 'polygon');
+    shape.setAttribute('points', /points="([^"]*)"/.exec(a.target.selector.find(s => s.type === 'SvgSelector').value)[1]);
+    shape.setAttribute('class', a.motivation === 'describing' ? 'line' : 'zone');
+    const title = document.createElementNS(SVG_NS, 'title');
+    title.textContent = a.body.map(b => b.value).filter(Boolean).join('\n');
+    shape.append(title);
+    svg.append(shape);
+  }
+  document.getElementById('view').replaceChildren(img, svg);
+}
+
+// 4. Load the files and show the JSON-LD
+document.getElementById('files').addEventListener('change', async e => {
+  const out = document.getElementById('out');
+  const files = [...e.target.files];
+  const jpg = files.find(f => /\.jpe?g$/i.test(f.name));
+  const xml = files.find(f => /\.xml$/i.test(f.name));
+  if (!jpg || !xml) { out.textContent = 'Choose both a .jpg and its .xml.'; return; }
+  try {
+    const page = parsePage(await xml.text());
+    const annotations = toW3C(page, xml.name.replace(/\.xml$/i, ''), xml.name);
+    draw(jpg, page, annotations);
+    out.textContent = JSON.stringify(annotations, null, 2);
+  } catch (err) {
+    out.textContent = err.message;
+  }
+});
+</script>
+
+<footer>
+  © 2025 Mariona Coll Ardanuy, Coral Cuadrada, and Ramon Sarobe. Image and transcriptions are from
+  <a href="https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC">“A Dataset for Handwritten Text Recognition in Medieval Notarial Charters Written on Parchment”</a>
+  (BSC Dataverse, V1), licensed under
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+</footer>
+</body>
+</html>
