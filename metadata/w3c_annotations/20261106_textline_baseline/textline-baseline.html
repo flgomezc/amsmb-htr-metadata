@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text lines and baselines</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 1rem; }
+  #view { position: relative; display: inline-block; max-width: 100%; }
+  #view img { display: block; max-width: 100%; }
+  #view svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  #view * { vector-effect: non-scaling-stroke; stroke-width: 2; }
+  .line { fill: rgba(0, 0, 255, 0.15); stroke: blue; }
+  .line:hover { fill: rgba(0, 0, 255, 0.35); }
+  .baseline { fill: none; stroke: red; }
+  .zone { fill: none; stroke: green; stroke-dasharray: 6 4; pointer-events: all; }
+  #label { position: fixed; margin: 0; padding: 0.2em 0.4em; background: #fff; border: 1px solid #999; pointer-events: none; }
+  #label:empty { display: none; }
+  pre { background: #eee; padding: 0.5rem; overflow: auto; max-height: 30rem; }
+</style>
+</head>
+<body>
+<h1>Text lines and baselines as W3C Web Annotations</h1>
+<p>Written 2026-11-06. Choose a charter's JPEG and its PageXML together. The shapes are drawn from the W3C JSON-LD below.
+Hover a line or a graphic zone to see its transcription or type.</p>
+<pre>
+AnnotationPage
+└─ items
+   ├─ zone       motivation: classifying
+   │   ├─ body:   PAGE TextRegion (classifying) · SegmOnto type (tagging) · TextRegion in the PageXML (identifying)
+   │   └─ target: image + polygon (SvgSelector)
+   ├─ line       motivation: describing
+   │   ├─ body:   transcription · PAGE TextLine (classifying) · SegmOnto type (tagging)
+   │   │          · TextLine in the PageXML (identifying) · its zone annotation (linking)
+   │   └─ target: image + polygon (SvgSelector)
+   └─ baseline   motivation: classifying
+       ├─ body:   PAGE Baseline (classifying) · Baseline in the PageXML (identifying) · its line annotation (linking)
+       └─ target: image + polyline (SvgSelector)
+</pre>
+<p>Elements with no SegmOnto type have no tag. Signums are TextRegions in the PageXML; their tag, GraphicZone:Signum, carries the meaning.</p>
+<input type="file" id="files" accept=".jpg,.jpeg,.xml" multiple>
+<div id="view"></div>
+<p id="label"></p>
+<pre id="out"></pre>
+
+<script>
+const SVG_NS = 'http://www.w3.org/2000/svg';
+const NS = 'https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC#';
+const PAGE_XSD = 'http://schema.primaresearch.org/PAGE/gts/pagecontent/2019-07-15/pagecontent.xsd';
+
+const kid = (el, name) => [...el.children].find(c => c.localName === name);
+const segType = el => /structure\s*\{[^}]*type:([^;}]+)/.exec(el.getAttribute('custom') || '')?.[1].trim();
+const shape = (name, points) => ({ type: 'SvgSelector', value: `<svg xmlns="${SVG_NS}"><${name} points="${points}"/></svg>` });
+const resource = (purpose, source, xpath) => ({ type: 'SpecificResource', purpose, source,
+  ...(xpath && { selector: { type: 'XPathSelector', value: xpath } }) });
+const pageClass = name => resource('classifying', PAGE_XSD, `//*[local-name()='element'][@name='${name}']`);
+const tag = el => segType(el) ? [{ type: 'TextualBody', purpose: 'tagging', value: segType(el) }] : [];
+
+// Read the PageXML and convert it to W3C annotations: zones, lines and baselines.
+function toW3C(xmlText, xmlName) {
+  const page = new DOMParser().parseFromString(xmlText, 'application/xml').getElementsByTagNameNS('*', 'Page')[0];
+  if (!page) throw new Error('No <Page> element: is this a PageXML file?');
+  const stem = xmlName.replace(/\.xml$/i, ''), image = page.getAttribute('imageFilename'), items = [];
+  const annotation = (id, motivation, body, selector) =>
+    items.push({ id: `${NS}anno_${stem}_${id}`, type: 'Annotation', motivation, body, target: { source: image, selector } });
+
+  for (const zone of page.getElementsByTagNameNS('*', 'TextRegion')) {
+    const zoneId = zone.getAttribute('id'), zonePath = `//*[local-name()='TextRegion'][@id='${zoneId}']`;
+    annotation(zoneId, 'classifying',
+      [pageClass('TextRegion'), ...tag(zone), resource('identifying', xmlName, zonePath)],
+      shape('polygon', kid(zone, 'Coords').getAttribute('points')));
+
+    for (const line of [...zone.children].filter(c => c.localName === 'TextLine')) {
+      const lineId = line.getAttribute('id'), linePath = `//*[local-name()='TextLine'][@id='${lineId}']`;
+      const unicode = kid(line, 'TextEquiv') && kid(kid(line, 'TextEquiv'), 'Unicode');
+      annotation(lineId, 'describing',
+        [{ type: 'TextualBody', value: unicode ? unicode.textContent : '', format: 'text/plain' },
+         pageClass('TextLine'), ...tag(line), resource('identifying', xmlName, linePath),
+         resource('linking', `${NS}anno_${stem}_${zoneId}`)],
+        shape('polygon', kid(line, 'Coords').getAttribute('points')));
+
+      const baseline = kid(line, 'Baseline');
+      if (baseline) annotation(`${lineId}_baseline`, 'classifying',
+        [pageClass('Baseline'), resource('identifying', xmlName, `${linePath}/*[local-name()='Baseline']`),
+         resource('linking', `${NS}anno_${stem}_${lineId}`)],
+        shape('polyline', baseline.getAttribute('points')));
+    }
+  }
+  return { '@context': 'http://www.w3.org/ns/anno.jsonld', id: `${NS}AnnotationPage_${stem}`, type: 'AnnotationPage', items };
+}
+
+// Draw each annotation's SvgSelector over the image.
+function draw(jpg, annotations) {
+  const img = new Image(), svg = document.createElementNS(SVG_NS, 'svg');
+  img.onload = () => svg.setAttribute('viewBox', `0 0 ${img.naturalWidth} ${img.naturalHeight}`);
+  img.src = URL.createObjectURL(jpg);
+  const label = document.getElementById('label');
+  svg.onmousemove = e => {
+    label.textContent = e.target.getAttribute('data-label') || '';
+    label.style.left = `${e.clientX + 12}px`;
+    label.style.top = `${e.clientY + 12}px`;
+  };
+  svg.onmouseleave = () => label.textContent = '';
+  for (const a of annotations.items) {
+    const el = new DOMParser().parseFromString(a.target.selector.value, 'image/svg+xml').documentElement.firstElementChild;
+    el.setAttribute('class', a.motivation === 'describing' ? 'line' : el.localName === 'polyline' ? 'baseline' : 'zone');
+    const node = document.importNode(el, true), type = a.body.find(b => b.purpose === 'tagging')?.value || '';
+    node.setAttribute('data-label', a.motivation === 'describing' ? a.body[0].value : type.startsWith('GraphicZone') ? type : '');
+    svg.append(node);
+  }
+  document.getElementById('view').replaceChildren(img, svg);
+}
+
+document.getElementById('files').addEventListener('change', async e => {
+  const out = document.getElementById('out'), files = [...e.target.files];
+  const jpg = files.find(f => /\.jpe?g$/i.test(f.name)), xml = files.find(f => /\.xml$/i.test(f.name));
+  if (!jpg || !xml) { out.textContent = 'Choose both a .jpg and its .xml.'; return; }
+  try {
+    const annotations = toW3C(await xml.text(), xml.name);
+    draw(jpg, annotations);
+    out.textContent = JSON.stringify(annotations, null, 2);
+  } catch (err) {
+    out.textContent = err.message;
+  }
+});
+</script>
+
+<footer>
+  © 2025 Mariona Coll Ardanuy, Coral Cuadrada, and Ramon Sarobe. Image and transcriptions are from
+  <a href="https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC">“A Dataset for Handwritten Text Recognition in Medieval Notarial Charters Written on Parchment”</a>
+  (BSC Dataverse, V1), licensed under
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+</footer>
+</body>
+</html>
