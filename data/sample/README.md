@@ -1,8 +1,9 @@
 # AMSMB HTR dataset: sample
 
-This is a sample of 2 of the 100 documents in the AMSMB HTR dataset, included
-to develop and test the metadata in this repository. It is not the complete
-dataset, and `metadata.csv` still lists all 100 documents.
+This is a sample of 3 of the 100 documents in the AMSMB HTR dataset, one for
+each split (train, validation and test). It keeps the structure of the
+published dataset and is included to develop and test the metadata in this
+repository. It is not the complete dataset.
 
 **Full dataset:** https://dataverse.bsc.es/dataset.xhtml?persistentId=perma:BSC/0VB0MC
 
@@ -21,10 +22,14 @@ license: https://creativecommons.org/licenses/by-sa/4.0/
 
 ## Changes from the original
 
-Only the 2 documents listed below are included, and this README replaces the original.
+Only the 3 documents listed below are included, and this README replaces the original.
 
 - `data/train/AMSMB_1-1-17` (`.jpg`, `.xml`)
+- `data/validation/AMSMB_1-62-39` (`.jpg`, `.xml`)
 - `data/test/AMSMB_1-3-100` (`.jpg`, `.xml`)
+
+`metadata.csv` is reduced to the rows of these 3 documents. The original lists
+all 100.
 
 `amsmb_metadata_with_summaries.json` is an addition prepared for publication on
 BSC Dataverse. It is not part of the V1 cited above.
